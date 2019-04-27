@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38915" started-at="2019-04-27T18:32:20Z" finished-at="2019-04-27T18:32:59Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38915" started-at="2019-04-27T18:32:20Z" finished-at="2019-04-27T18:32:59Z">
+      <class name="com.next.proj.nextG_proj.infra.tests.LoginTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.next.proj.nextG_proj.infra.tests.LoginTest@a38d7a3]" name="beforeTest" is-config="true" duration-ms="21869" started-at="2019-04-27T18:32:20Z" finished-at="2019-04-27T18:32:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="_002_loginToAmazon()[pri:0, instance:com.next.proj.nextG_proj.infra.tests.LoginTest@a38d7a3]" name="_002_loginToAmazon" duration-ms="17004" started-at="2019-04-27T18:32:42Z" finished-at="2019-04-27T18:32:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _002_loginToAmazon -->
+      </class> <!-- com.next.proj.nextG_proj.infra.tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
