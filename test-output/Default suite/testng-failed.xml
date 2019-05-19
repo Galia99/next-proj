@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.infra.tests.LoginTest">
+      <class name="com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest">
         <methods>
-          <include name="_002_loginToAmazon"/>
           <include name="beforeTest"/>
+          <include name="_003_searchProductNegativeTest"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.infra.tests.LoginTest -->
+      </class> <!-- com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
