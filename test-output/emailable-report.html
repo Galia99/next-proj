@@ -9,15 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">35,754</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">30,288</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest</td><td><a href="#m0">_003_searchProductNegativeTest</a></td><td rowspan="1">1558274261508</td><td rowspan="1">31443</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.next.proj.nextG_proj.tests.AddItemToBagTest</td><td><a href="#m0">_06_addItemsToBagTest</a></td><td rowspan="1">1558721285544</td><td rowspan="1">25449</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest#_003_searchProductNegativeTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The result found does not match the query! Sunglasses&apos; expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest._003_searchProductNegativeTest(SearchProductNegativeTest.java:62)
+<h2>Default test</h2><h3 id="m0">com.next.proj.nextG_proj.tests.AddItemToBagTest#_06_addItemsToBagTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Exception: Not on the expected page! Class name : NextShoppingBagPage
+Expected condition failed: waiting for visibility of element located by By.id: #dk_container_Qty_2 (tried for 5 second(s) with 500 milliseconds interval)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.assertInPage(NextAbstractPage.java:30)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.&lt;init&gt;(NextAbstractPage.java:17)
+	at com.next.proj.nextG_proj.infra.pages.NextShoppingBagPage.&lt;init&gt;(NextShoppingBagPage.java:12)
+	at com.next.proj.nextG_proj.infra.pages.NextProductPage.clickOnviewEditBagButton(NextProductPage.java:43)
+	at com.next.proj.nextG_proj.tests.AddItemToBagTest._06_addItemsToBagTest(AddItemToBagTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

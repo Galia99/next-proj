@@ -1,28 +1,12 @@
 package com.next.proj.nextG_proj.tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ChangeAccountDetailsTest {
-
-	private WebDriver driver;
-
-	@BeforeMethod
-	public void beforeTest() {
-		if (driver == null) {
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-		}
-	}
-
+public class ChangeAccountDetailsTest  extends AbstractTest{
 
 	@Test
 	public void _05_ChangeAccountDetailsTest() {
@@ -56,7 +40,7 @@ public class ChangeAccountDetailsTest {
 		Actions action = new Actions(driver);
 		WebElement galinasAccountButton = driver.findElement(By.xpath("//li[@data-section='myAccount']/a[@data-link-name='DataLinkName']")); 
 		galinasAccountButton.click();
-        
+
 		//action.moveToElement (navesti myshku na element chtoby otkryt' novoe okno)
 		action.moveToElement(galinasAccountButton).build().perform();
 		driver.findElement(By.xpath("//a[@class='myAccountsignout']")).click();
@@ -64,12 +48,6 @@ public class ChangeAccountDetailsTest {
 		//Login with new password.
 		driver.findElement(By.id("Password")).sendKeys("galina@24");
 		driver.findElement(By.id("SignInNow")).click();
-		
-	}
 
-	@AfterMethod
-	public void afterTest() {
-		driver.quit();
-		driver = null;
 	}
 }

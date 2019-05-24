@@ -1,27 +1,11 @@
 package com.next.proj.nextG_proj.tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class loginInvalidMailTest {
-
-	private WebDriver driver;
-
-	@BeforeMethod
-	public void beforeTest() {
-
-		if (driver == null) {
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-		}
-	}
+public class loginInvalidMailTest extends AbstractTest {
 
 	@Test
 	public void _02_loginWithInvalidMailTest() {
@@ -41,7 +25,7 @@ public class loginInvalidMailTest {
 		WebElement warningMessageTitel = driver.findElement(By.xpath("//span[@class='msgboxTitle']"));
 		String warningMessageTitelText = warningMessageTitel.getText();
 		Assert.assertEquals(warningMessageTitelText, "Sorry, we have been unable to sign you in.", "Wrong Warning Message"); 
-		
+
 		System.out.println("Warning Message: " + warningMessageTitelText);
 
 		//Clear fields and Login with valid email.
@@ -50,13 +34,6 @@ public class loginInvalidMailTest {
 		driver.findElement(By.id("EmailOrAccountNumber")).sendKeys("galinaltman@gmail.com");
 		driver.findElement(By.id("Password")).sendKeys("galina@22");
 		driver.findElement(By.id("SignInNow")).click();
-
-	}
-
-	@AfterMethod
-	public void afterTest() {
-		driver.quit();
-		driver = null;
 
 	}
 }

@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest">
+      <class name="com.next.proj.nextG_proj.tests.AddItemToBagTest">
         <methods>
+          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="_003_searchProductNegativeTest"/>
+          <include name="_06_addItemsToBagTest"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.AddItemToBagTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

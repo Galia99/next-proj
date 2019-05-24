@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun May 19 16:57:37 IDT 2019</td>
+<td>Started on:</td><td>Fri May 24 21:08:00 IDT 2019</td>
 </tr>
-<tr><td>Total time:</td><td>35 seconds (35754 ms)</td>
+<tr><td>Total time:</td><td>30 seconds (30288 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest._003_searchProductNegativeTest()'><b>_003_searchProductNegativeTest</b><br>Test class: com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest</td>
-<td><div><pre>java.lang.AssertionError: The result found does not match the query! Sunglasses&apos; expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest._003_searchProductNegativeTest(SearchProductNegativeTest.java:62)
+<td title='com.next.proj.nextG_proj.tests.AddItemToBagTest._06_addItemsToBagTest()'><b>_06_addItemsToBagTest</b><br>Test class: com.next.proj.nextG_proj.tests.AddItemToBagTest</td>
+<td><div><pre>java.lang.Exception: Not on the expected page! Class name : NextShoppingBagPage
+Expected condition failed: waiting for visibility of element located by By.id: #dk_container_Qty_2 (tried for 5 second(s) with 500 milliseconds interval)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.assertInPage(NextAbstractPage.java:30)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.&lt;init&gt;(NextAbstractPage.java:17)
+	at com.next.proj.nextG_proj.infra.pages.NextShoppingBagPage.&lt;init&gt;(NextShoppingBagPage.java:12)
+	at com.next.proj.nextG_proj.infra.pages.NextProductPage.clickOnviewEditBagButton(NextProductPage.java:43)
+	at com.next.proj.nextG_proj.tests.AddItemToBagTest._06_addItemsToBagTest(AddItemToBagTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,12 +108,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1225568095", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1225568095'><pre>java.lang.AssertionError: The result found does not match the query! Sunglasses&apos; expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest._003_searchProductNegativeTest(SearchProductNegativeTest.java:62)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1046545660", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1046545660'><pre>java.lang.Exception: Not on the expected page! Class name : NextShoppingBagPage
+Expected condition failed: waiting for visibility of element located by By.id: #dk_container_Qty_2 (tried for 5 second(s) with 500 milliseconds interval)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.assertInPage(NextAbstractPage.java:30)
+	at com.next.proj.nextG_proj.infra.pages.NextAbstractPage.&lt;init&gt;(NextAbstractPage.java:17)
+	at com.next.proj.nextG_proj.infra.pages.NextShoppingBagPage.&lt;init&gt;(NextShoppingBagPage.java:12)
+	at com.next.proj.nextG_proj.infra.pages.NextProductPage.clickOnviewEditBagButton(NextProductPage.java:43)
+	at com.next.proj.nextG_proj.tests.AddItemToBagTest._06_addItemsToBagTest(AddItemToBagTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,8 +142,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>31</td>
-<td>com.next.proj.nextG_proj.infra.tests.SearchProductNegativeTest@7a3d45bd</td></tr>
+<td>25</td>
+<td>com.next.proj.nextG_proj.tests.AddItemToBagTest@371a67ec</td></tr>
 </table><p>
 </body>
 </html>

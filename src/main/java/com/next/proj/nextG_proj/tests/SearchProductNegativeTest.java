@@ -1,41 +1,21 @@
 package com.next.proj.nextG_proj.tests;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.next.proj.nextG_proj.infra.pages.NextLandingPage;
 import com.next.proj.nextG_proj.infra.pages.NextSearchResultsPage;
 
-
-public class SearchProductNegativeTest {
-
-	private WebDriver driver;
-
-	@BeforeMethod
-	public void beforeTest(){
-
-		if (driver == null) {
-			System.setProperty("webdriver.chrome,driver", "src/main/resources/chromedriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
-			driver = new ChromeDriver(); 
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//Implicitly Wait (TimeOut) If Element not found.
-			driver.manage().window().maximize();
-		}
-	}
+public class SearchProductNegativeTest  extends AbstractTest{
 
 	@Test
 	public void _003_searchProductNegativeTest() throws Exception {
 
 		//Search and compare data.
 		String searchTerm = "Shoes";
-		String expectedWordInResult ="Sunglasses";  
+		String expectedWordInResultSunglasses ="Sunglasses";  
 
 		driver.get("https://www.next.co.il/en");
 
@@ -43,7 +23,7 @@ public class SearchProductNegativeTest {
 		WebElement myAccountButton = driver.findElement(By.xpath("//a[@data-link-id='DataLinkId']"));
 		myAccountButton.click();
 
-		//LogIn.
+		//Enter "LogIn" parameters and click on "SignIn" button
 		driver.findElement(By.id("EmailOrAccountNumber")).sendKeys("galinaltman@gmail.com");
 		driver.findElement(By.id("Password")).sendKeys("galina@22");
 		driver.findElement(By.id("SignInNow")).click();
@@ -54,17 +34,11 @@ public class SearchProductNegativeTest {
 
 		//Click on "Item Button".
 		NextSearchResultsPage nextSearchResultsPage = nextLandingPage.clickOnseachItemsButton();
-		
+
 		//????????????
 		String sandalsSearchTitle = nextSearchResultsPage.getSandalsSearchTitle();  	
 
 		//Check search result.
-		Assert.assertTrue(sandalsSearchTitle.contains(expectedWordInResult), "The result found does not match the query! " + expectedWordInResult + "'");
+		Assert.assertTrue(sandalsSearchTitle.contains(expectedWordInResultSunglasses), "The result found does not match the query! " + expectedWordInResultSunglasses + "'");
 	}
-
-/*	@AfterMethod
-	public void afterTest() {
-		driver.quit();
-		driver = null;
-	}*/
 }
