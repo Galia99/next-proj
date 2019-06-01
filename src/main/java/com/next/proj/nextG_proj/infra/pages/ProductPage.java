@@ -6,21 +6,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class NextProductPage extends NextAbstractPage{
+import com.next.proj.nextG_proj.infra.Web.By2;
 
-	private static final By addToBagButton = By.xpath("//article[@id='Style16796']//a[text()='Add To Bag']");
-	private static final By productTitle = By.xpath("//h1[text()='Ray-Ban® Aviator Sunglasses']");
-	private static final By viewEditBagButton = By.cssSelector("a[class='view_edit_bag']");
+public class ProductPage extends AbstractPage{
 
+	private static final By2 addToBagButton = new By2("'add to bag button'", By.xpath("//a[text()='Add To Bag']"));
+	private static final By2 productTitle = new By2("'product title'", By.xpath("//div[@class='Title']"));
+	private static final By2 viewEditBagButton = new By2("'view edit bag button'", By.cssSelector("a[class='view_edit_bag']"));
 
-	public NextProductPage(WebDriver driver) throws Exception {
+	public ProductPage(WebDriver driver) throws Exception {
 		super(driver, addToBagButton, productTitle);
 	}
 	public void clickOnaddToBagButton () {
-		driver.findElement(addToBagButton).click();
+		bot.click(addToBagButton);
+		//driver.findElement(addToBagButton).click();
 	}
 
-	
+	public String getProductTitle () {
+		return bot.getElementText(productTitle);
+	}
 	/*
 	 * public NextShoppingBagPage clickOnviewEditBagButton () throws Exception {
 	 * driver.findElement(viewEditBagButton).click();
@@ -30,23 +34,20 @@ public class NextProductPage extends NextAbstractPage{
 	 * return new NextShoppingBagPage(driver); }
 	 */
 	 
-	 public NextShoppingBagPage clickOnviewEditBagButton () throws Exception {
-			
+	 public ShoppingBagPage clickOnviewEditBagButton () throws Exception {
 			
 			if (viewEditBagButtonVisible()) {
 				//write here that this page exists
 				System.out.println("The bag of items is shown");
-				driver.findElement(viewEditBagButton).click();
+				bot.click(viewEditBagButton);
 			}
-			
-			
-		return new NextShoppingBagPage(driver);
+	
+			return new ShoppingBagPage(driver);
 	}
-	 
 	 
 	public boolean viewEditBagButtonVisible() {
 		
-		List<WebElement> elements = driver.findElements(viewEditBagButton);
+		List<WebElement> elements = driver.findElements(viewEditBagButton.by);
 		if (elements.size() > 0) {
 			return elements.get(0).isDisplayed();
 		}
@@ -71,10 +72,11 @@ public class NextProductPage extends NextAbstractPage{
 		if (elements.size() > 0) {
 			return elements.get(0).isDisplayed();
 		}
-		
 		return false;
 		*/
+	
 		//-----------------------------(Or)----------------------------------------------
+	
 		/*try {
 			WebElement xButton = driver.findElement(viewEditBagButton);//if xButton exists and displayet
 			return xButton.isDisplayed();

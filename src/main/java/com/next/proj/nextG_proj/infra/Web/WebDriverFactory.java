@@ -8,13 +8,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.next.proj.nextG_proj.infra.config.MainConfig;
+import com.next.proj.nextG_proj.infra.reports.ConsoleReporter;
 
 public class WebDriverFactory {
 
 	public static WebDriver getWebDriver(WebDriverType webDriverType ){
-   
+
 		WebDriver driver = null;
-		
+
 		switch(webDriverType) {
 		case CHROME:
 			System.setProperty("webdriver.chrome,driver", "src/main/resources/chromedriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
@@ -25,13 +26,15 @@ public class WebDriverFactory {
 			driver = new FirefoxDriver();
 			break; 
 		case INTERNET_EXPLORER:
-			System.setProperty("webdriver.chrome,driver", "src/main/resources/IEDriverServer.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
+			System.setProperty("webdriver.ie,driver", "src/main/resources/IEDriverServer.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
 			driver = new InternetExplorerDriver();
 			break;
-    }
+		}
 		driver.manage().timeouts().implicitlyWait(MainConfig.webDriverImplicitWaitInSeconds, TimeUnit.SECONDS);//Implicitly Wait (TimeOut) If Element not found.
 		driver.manage().window().maximize();
-		
+
+		ConsoleReporter.report("Open new  " + webDriverType + " browser window");
+
 		return driver;
 	}
 }

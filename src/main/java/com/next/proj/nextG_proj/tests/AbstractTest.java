@@ -1,11 +1,12 @@
 package com.next.proj.nextG_proj.tests;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.next.proj.nextG_proj.infra.Web.WebDriverFactory;
 import com.next.proj.nextG_proj.infra.config.MainConfig;
+import com.next.proj.nextG_proj.infra.reports.ConsoleReporter;
 
 public abstract class AbstractTest {
 
@@ -15,17 +16,19 @@ public abstract class AbstractTest {
 	public void beforeTest() {
 
 		if (driver == null) {
-            driver = WebDriverFactory.getWebDriver(MainConfig.webDriverType); //Web>>WebDriverFactory
-			/*System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();*/
+			driver = WebDriverFactory.getWebDriver(MainConfig.webDriverType); //Web>>WebDriverFactory
 		}
 	} 
- 
-	@AfterTest 
-		public void afterTest() {
+
+	public void browseToUrl(String url) {
+		ConsoleReporter.report("Prowsing to URL: " + url);
+		driver.get(url);
+	}
+
+	@AfterMethod
+	public void afterTest() {
 		if (driver != null && MainConfig.closeBrowserTestEnd) { 
-            driver.close();
+			driver.close();
 		}
 	}
 }

@@ -1,11 +1,12 @@
 package com.next.proj.nextG_proj.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.next.proj.nextG_proj.infra.pages.NextLandingPage;
-
+import com.next.proj.nextG_proj.infra.pages.LandingPage;
+import com.next.proj.nextG_proj.infra.pages.ProductPage;
+import com.next.proj.nextG_proj.infra.pages.SearchResultsPage;
+import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
 
 public class SearchProductTest  extends AbstractTest{
 
@@ -13,27 +14,34 @@ public class SearchProductTest  extends AbstractTest{
 	public void _04_searchProductsTest() throws Exception {
 
 		String searchTerm ="Sunglasses Silver Aviator";
+		String expectedResultSunglasses ="Ray-Ban® Aviator Sunglasses";
+		String email = "GalinaLtman@gmail.com";
+		String password = "galina@40";
+		
+		//Step 1 - Browse to next.co.il landing page
+		browseToUrl("https://www.next.co.il/en");
+		LandingPage landingPage = new LandingPage(driver);
 
-		driver.get("https://www.next.co.il/en");
+		//Step 2 - click on "My Account Button"
+		SignInToNextPage signInToNextPage = landingPage.clickOnmyAccountButton();
 
-		//Login to next.com
-		WebElement myAccountButton = driver.findElement(By.xpath("//a[@data-link-id='DataLinkId']"));
-		myAccountButton.click();
+		//Step 3 - Enter Password, Email and click on "Sign In Now" button
+		signInToNextPage.writeToemailField(email);
+		signInToNextPage.writeToPasswordField(password);
+		signInToNextPage.clickTosignInNowButton();
 
-		driver.findElement(By.id("EmailOrAccountNumber")).sendKeys("galinaltman@gmail.com");
-		driver.findElement(By.id("Password")).sendKeys("galina@22");
-		driver.findElement(By.id("SignInNow")).click();
+		//Step-4 write to search box & click on "search items" button
+		landingPage.writeToSearchBox(searchTerm);
+		SearchResultsPage searchResultsPage = landingPage.clickOnseachItemsButton();
 
-		//write to search box
-		NextLandingPage nextLandingPage = new NextLandingPage(driver);
-		nextLandingPage.writeToSearchBox(searchTerm);
-		nextLandingPage.clickOnseachItemsButton();
-		/*WebElement searchBox = driver.findElement(By.xpath("//input[@class='SearchBox']"));
-		searchBox.sendKeys("Sunglasses Silver Aviator");
-		WebElement seachItemsButton = driver.findElement(By.xpath("//input[@class='SearchButton']"));
-		searchBox.sendKeys(Keys.ENTER);
-		 */
-		//Open item page.
-		driver.findElement(By.xpath(("//article[@id='i1']"))).click();		
+		//Step-5 click on search results item 
+		searchResultsPage.clickOnsilverAviatorStyleSunglasses();
+
+		//Step-6 ?????
+		ProductPage productPage = new ProductPage(driver);
+		String itemTitle = productPage.getProductTitle();
+
+		//Step-7 check search result
+		Assert.assertTrue(itemTitle.contains(expectedResultSunglasses), "The result found does not match the query! " + expectedResultSunglasses + "'");
 	}
 }
