@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 import com.next.proj.nextG_proj.infra.Web.By2;
 
-public class ItemInBagWindowPage  extends AbstractPage {
+public class ItemInBagPopUpWindowPage  extends AbstractPage {
 
-	private static final By2 viewEditBagButton = new By2("'view edit bag button'", By.cssSelector("a[class='view_edit_bag']"));
+	private static final By2 viewEditBagButton = new By2("'view or edit bag button'", By.cssSelector("a[class='view_edit_bag']"));
 
-	public ItemInBagWindowPage(WebDriver driver) throws Exception {
+	public ItemInBagPopUpWindowPage(WebDriver driver) throws Exception {
 		super(driver, viewEditBagButton);
 	}
 

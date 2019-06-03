@@ -9,12 +9,12 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class MyAccountPage extends AbstractPage{
 
-	private static final By2 editSignInDetailsButton = new By2("'edit in signin details button'", By.id("btnUpdateSigninDetails"));
-	private static final By2 hiMrsGalinaKhononovTitle = new By2("'hi Mrs Galina Khononov title'", By.xpath("//h1[@class='heading']"));
+	private static final By2 editSignInDetailsButton = new By2("'Edit signin details button'", By.id("btnUpdateSigninDetails"));
+	private static final By2 hiMrsGalinaKhononovTitle = new By2("'Hi Mrs Galina Khononov title'", By.xpath("//h1[@class='heading']"));
 	//private static final By editBillingAddressButton = new By2("'edit Billing Address button'", By.id("button_Panel_update_billing_address");
-	private static final By2 editBillingAddressButton = new By2("'edit Billing Address button'", By.id("button_Panel_update_billing_address"));
-	private static final By2 telephoneCheckBox = new By2("'telephone check box'", By.id("InternationalAccountSummary_ContactByTelephoneChecked"));
-	private static final By2 billingAddressInformation = new By2("'billing address information'", By.xpath("//div[@class='address']"));
+	private static final By2 editBillingAddressButton = new By2("'Edit Billing Address button'", By.id("button_Panel_update_billing_address"));
+	private static final By2 telephoneCheckBox = new By2("'Telephone check box'", By.id("InternationalAccountSummary_ContactByTelephoneChecked"));
+	private static final By2 billingAddressInformation = new By2("'billing address information in My Account page'", By.xpath("//div[@class='address']"));
 
 	
 	

@@ -11,18 +11,18 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class UpdateDeliveryAddressDetailsPage extends AbstractPage {
 
-	private static final By2 addressDetailsLabel = new By2("'address details label'", By.xpath("//legend[contains(text(),'Please enter your address details')]"));
-	private static final By2 stateOrProvincefield = new By2("'state or province field'", By.id("dk_container_AddressLine5"));
-	private static final By2 haifaProvince = new By2("'haifa province'", By.xpath("//a[@data-dk-dropdown-value='H_EFA']"));
+	private static final By2 addressDetailsTitle = new By2("'Address details title'", By.xpath("//legend[contains(text(),'Please enter your address details')]"));
+	private static final By2 stateOrProvincefield = new By2("'State or province field'", By.id("dk_container_AddressLine5"));
+	private static final By2 haifaProvince = new By2("'Haifa province'", By.xpath("//a[@data-dk-dropdown-value='H_EFA']"));
 	private static final By2 haZafonProvince = new By2("'Ha Zafon province'", By.xpath("//a[@data-dk-dropdown-value='HA Z_AFON']"));
 	private static final By2 haDaromProvince = new By2("'Ha Darom province'", By.xpath("//a[@data-dk-dropdown-value='HADAROM']"));
 	private static final By2 haMerkazProvince = new By2("'Ha Merkaz province'", By.xpath("//a[@data-dk-dropdown-value='HAMERKAZ']"));
 	private static final By2 telAvivProvince = new By2("'Tel-Aviv province'", By.xpath("//a[@data-dk-dropdown-value='TEL-AVIV']"));
 	private static final By2 yerushalaimProvince = new By2("'Yerushalaim province'", By.xpath("//a[@data-dk-dropdown-value='YERUSHALAYIM']"));
-	private static final By2 updateButton = new By2("'update button'", By.xpath("//button[@class='submit']"));
+	private static final By2 updateButton = new By2("'Update, address and details button '", By.xpath("//button[@class='submit']"));
 
 	public UpdateDeliveryAddressDetailsPage(WebDriver driver) throws Exception {
-		super(driver, addressDetailsLabel);
+		super(driver, addressDetailsTitle);
 
 	}
 
@@ -57,7 +57,6 @@ public class UpdateDeliveryAddressDetailsPage extends AbstractPage {
 		} catch (Exception e) {
 			new Actions(driver).sendKeys(Keys.PAGE_DOWN).perform();
 			bot.click(updateButton);//1 CLIK OTMECHAET IZMENENIYA
-		//	bot.click(updateButton);//2 CLIK PEREXOD NA MY ACCAUNT PAGE, NE SRABATYVAET S PERVOGO RAZA
 		}
 	}
 }

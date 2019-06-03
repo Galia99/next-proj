@@ -11,19 +11,25 @@ public class LandingPage extends AbstractPage{
 
 	// class-By, metoda statit-id, mahzira ob'ect mi tipus-By.
 	private static final By2 searchbox = new By2("'Main search box'", By.xpath("//input[@class='SearchBox']"));
-	private static final By2 searchProductsButton = new By2("' Magnifier button for search products'", By.xpath("//input[@class='SearchButton']"));
-	private static final By2 shoppingBagButton = new By2("'Shopping bag button'",  By.xpath("//div[@class='Icon active']"));
-	private static final By2 myAccountButton = new By2("'My account button'",  By.xpath("//a[@data-link-id='DataLinkId']"));
-	private static final By2 checkoutButton = new By2("'Checkout button'",  By.xpath("//div[@class='Checkout ']/a[@class='nxbtn primary']"));
+	private static final By2 searchProductsButton = new By2("'(Magnifier) button for search products'", By.xpath("//input[@class='SearchButton']"));
+	private static final By2 shoppingBagButton = new By2("'Shopping bag Icon'",  By.xpath("//div[@class='Icon active']"));
+	private static final By2 myAccountButton = new By2("'My Account button for open Sign Into Next page'",  By.xpath("//a[@data-link-id='DataLinkId']"));
+	private static final By2 checkoutButton = new By2("'Checkout button, to log out from page'",  By.xpath("//div[@class='Checkout ']/a[@class='nxbtn primary']"));
 	private static final By2 FavouriteIcon = new By2("'Favourite icon'",  By.xpath("//div[@class='favourite-icon intl']"));
-	private static final By2 FavouriteIconAfterNotification = new By2("'Favourite icon after notification'",  By.xpath("//div[@class='favourite-icon intl notification']"));
+	private static final By2 markedFavouriteIcon = new By2("'marked Favourite icon'",  By.xpath("//div[@class='favourite-icon intl notification']"));
 	private static final By2 myAccountlinkActive = new By2("'My account link active'",  By.xpath("//a[@class='myAccountlinkactive']"));
-	private static final By2 myAccountSignOut = new By2("'MyAccount sign Out'",  By.xpath("//a[@class='myAccountsignout']"));
+	private static final By2 myAccountSignOutButton = new By2("'Sign Out button in My Account page'",  By.xpath("//a[@class='myAccountsignout']"));
+	private static final By2 Mobile = new By2("'Mobile'",  By.xpath("//a[@title='Next Mobile']"));
 
+	
 	public LandingPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 
+	public void clickMobile() {
+		bot.click(Mobile);
+	}
+	
 	public void writeToSearchBox(String searchTerm) {
 		
 		bot.writeToElement(searchbox, searchTerm);
@@ -83,7 +89,7 @@ public class LandingPage extends AbstractPage{
 		try {
 			bot.click(FavouriteIcon);
 		}catch(Exception e) {
-			bot.click(FavouriteIconAfterNotification);
+			bot.click(markedFavouriteIcon);
 		}
 		return new FavouritePage(driver);
 	}
@@ -93,7 +99,7 @@ public class LandingPage extends AbstractPage{
 	}
 
 	public SignInToNextPage clickOnmyAccountSignOut() throws Exception {
-			bot.click(myAccountSignOut);
+			bot.click(myAccountSignOutButton);
 			return new SignInToNextPage(driver);
 	}
 	

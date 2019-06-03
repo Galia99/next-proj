@@ -10,9 +10,9 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class ProductPage extends AbstractPage{
 
-	private static final By2 addToBagButton = new By2("'add to bag button'", By.xpath("//a[text()='Add To Bag']"));
-	private static final By2 productTitle = new By2("'product title'", By.xpath("//div[@class='Title']"));
-	private static final By2 viewEditBagButton = new By2("'view edit bag button'", By.cssSelector("a[class='view_edit_bag']"));
+	private static final By2 addToBagButton = new By2("'Add to bag button'", By.xpath("//a[text()='Add To Bag']"));
+	private static final By2 productTitle = new By2("'Product title'", By.xpath("//div[@class='Title']"));
+	private static final By2 viewEditBagButton = new By2("'View edit in bag button'", By.cssSelector("a[class='view_edit_bag']"));
 
 	public ProductPage(WebDriver driver) throws Exception {
 		super(driver, addToBagButton, productTitle);

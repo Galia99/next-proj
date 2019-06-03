@@ -3,14 +3,20 @@ package com.next.proj.nextG_proj.tests;
 import org.testng.annotations.Test;
 
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
-import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
 
 public class Empty extends AbstractTest{
 
 	@Test
 	public void _00_empty() throws Exception {
-
-		String email = "GalinaLtman@gmail.com";
+		
+		
+		//Step 1 - Browse to next.co.il landing page
+				browseToUrl("https://www.next.co.il/en");
+				LandingPage landingPage = new LandingPage(driver);
+		
+			
+		/*
+				String email = "GalinaLtman@gmail.com";
 		String password = "galina@40";
 		
 		//Step 1 - Browse to next.co.il landing page
@@ -25,5 +31,6 @@ public class Empty extends AbstractTest{
 		signInToNextPage.writeToPasswordField(password);
 		
 		//MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButton();
-	}
+	*/
+}
 }

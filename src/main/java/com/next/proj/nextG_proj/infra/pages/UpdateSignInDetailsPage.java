@@ -7,14 +7,14 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class UpdateSignInDetailsPage extends AbstractPage{
 
-	private static final By2 newPasswordField = new By2("'new password field'", By.id("Password"));
-	private static final By2 updateButton = new By2("'sign in details update button'", By.id("btneditSigninDetails"));
-	private static final By2 passwordValidationMessageTitle = new By2("'password validation message title'", By.id("Password-validation-message"));
-	private static final By2 updateSignInDetailsLabel = new By2("'update sign in details label'", By.xpath("//label[text()='Update Sign In Details']"));
+	private static final By2 newPasswordField = new By2("'New password field'", By.id("Password"));
+	private static final By2 updateButton = new By2("'Update, sign in and details button'", By.id("btneditSigninDetails"));
+	private static final By2 passwordValidationMessageTitle = new By2("'Password validation message, when entering invalid password in Sign In Details page'", By.id("Password-validation-message"));
+	private static final By2 updateSignInDetailsTitle = new By2("'update sign in details title'", By.xpath("//label[text()='Update Sign In Details']"));
 
 	
 	public UpdateSignInDetailsPage(WebDriver driver) throws Exception {
-		super(driver, updateSignInDetailsLabel);
+		super(driver, updateSignInDetailsTitle);
 
 	}
 

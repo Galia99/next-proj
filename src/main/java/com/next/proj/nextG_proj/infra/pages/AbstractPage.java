@@ -7,10 +7,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.next.proj.nextG_proj.infra.Web.ActionBot;
 import com.next.proj.nextG_proj.infra.Web.By2;
-import com.next.proj.nextG_proj.infra.reports.ConsoleReporter;
+
+import il.co.topq.difido.ReportDispatcher;
+import il.co.topq.difido.ReportManager;
 
 public abstract class AbstractPage {
 
+	protected  ReportDispatcher report = ReportManager.getInstance();
 	protected WebDriver driver;
 	protected ActionBot bot;
 	protected By2[] pageUniqueElements;
@@ -31,7 +34,7 @@ public abstract class AbstractPage {
 				webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(UniqueElement.by));//web driver determines the visibility of the element / defines the page, wait 5 seconds.
 			}
 			
-			ConsoleReporter.report("*** On page: " + this.getClass().getSimpleName());
+			report.log("*** On page: " + this.getClass().getSimpleName());
 
 		}
 		catch(TimeoutException ex) {

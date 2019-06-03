@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.tests.AddItemToBagTest">
+      <class name="com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest">
         <methods>
+          <include name="_02_ChangeAccountDetailsTest"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="_06_addItemsToBagTest"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.tests.AddItemToBagTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

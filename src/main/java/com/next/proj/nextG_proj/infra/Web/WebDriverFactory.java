@@ -8,12 +8,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.next.proj.nextG_proj.infra.config.MainConfig;
-import com.next.proj.nextG_proj.infra.reports.ConsoleReporter;
+
+import il.co.topq.difido.ReportDispatcher;
+import il.co.topq.difido.ReportManager;
 
 public class WebDriverFactory {
+	
+	protected static ReportDispatcher report = ReportManager.getInstance();
 
 	public static WebDriver getWebDriver(WebDriverType webDriverType ){
-
+		
 		WebDriver driver = null;
 
 		switch(webDriverType) {
@@ -33,7 +37,7 @@ public class WebDriverFactory {
 		driver.manage().timeouts().implicitlyWait(MainConfig.webDriverImplicitWaitInSeconds, TimeUnit.SECONDS);//Implicitly Wait (TimeOut) If Element not found.
 		driver.manage().window().maximize();
 
-		ConsoleReporter.report("Open new  " + webDriverType + " browser window");
+		report.log("Open new  " + webDriverType + " browser window");
 
 		return driver;
 	}

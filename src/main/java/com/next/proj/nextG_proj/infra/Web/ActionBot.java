@@ -6,10 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.next.proj.nextG_proj.infra.reports.ConsoleReporter;
+import il.co.topq.difido.ReportDispatcher;
+import il.co.topq.difido.ReportManager;
 
 public class ActionBot { 
-
+	
+	protected ReportDispatcher report = ReportManager.getInstance();
 	private WebDriver driver;
 	private WebDriverWait webDriverWait;
 
@@ -19,22 +21,44 @@ public class ActionBot {
 	}
 
 	public void enter(By2 elementLocator) {
-		ConsoleReporter.report("Enter on element: " + elementLocator);
+		report.log("Enter on element: " + elementLocator);
 		driver.findElement(elementLocator.by).sendKeys(Keys.ENTER);
 	}
 	
-	public void click(By2 elementLocator) {
-		ConsoleReporter.report("Click on element: " + elementLocator);
+	public void click(By2 elementLocator) { //click
+		report.log("Click on element: " + elementLocator);
 		driver.findElement(elementLocator.by).click();
 	}
 	
+	/*
+	public void  click(By2 elementLocator) { //scroll and click
+		report.log("Click on element: " + elementLocator);
+		
+	waitForElementToBeClickable(elementLocator) //waitForElementToBeClickable
+	WebElement element = driver.findElement(elementLocator.by);
+	//executeJavaScript("arguments[0].scrollIntoView(true);", element);
+	element.click();
+	}
+	
+	public void executeJavaScript(String javaScript, WebElement element) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		
+		if (element != null) {
+			jsExecutor.executeScript(javaScript, element);
+		}
+		else {
+			jsExecutor.executeScript(javaScript);
+
+		}
+	}*/
+	
 	public void clear(By2 elementLocator) {
-		ConsoleReporter.report("Clear text: " + elementLocator);
+		report.log("Clear text: " + elementLocator);
 		driver.findElement(elementLocator.by).clear();
 	}
 
 	public void writeToElement(By2 elementLocator, String text) {
-		ConsoleReporter.report("Write '" + text + "' to element: " + elementLocator);
+		report.log("Write '" + text + "' to element: " + elementLocator);
 		WebElement element = driver.findElement(elementLocator.by);
 		element.clear();
 		element.sendKeys(text);
@@ -42,12 +66,12 @@ public class ActionBot {
 
 	public String getElementText(By2 elementLocator) {
 		String text = driver.findElement(elementLocator.by).getText();
-		ConsoleReporter.report("Element " + elementLocator + " inner text: " + text);
+		report.log("Element " + elementLocator + " inner text: " + text);
 		return text;
 	}
 
 	public void waitForElementToBeClickable(By2 elementLocator) {
-		ConsoleReporter.report("Wait for element:  " + elementLocator + " to be clickable");
+		report.log("Wait for element:  " + elementLocator + " to be clickable");
 		webDriverWait.until(ExpectedConditions.elementToBeClickable(elementLocator.by));
 	}
 
@@ -57,12 +81,12 @@ public class ActionBot {
 		if (elements.size() > 0) {
 
 			boolean isDisplayed = elements.get(0).isDisplayed();
-			ConsoleReporter.report("Element " + elementLocator + " is displayed: " + isDisplayed);
+			report.log("Element " + elementLocator + " is displayed: " + isDisplayed);
 
 			return isDisplayed;
 		}
 
-		    ConsoleReporter.report("Element " + elementLocator + " is NOT displayed!");
+		    report.log("Element " + elementLocator + " is NOT displayed!");
 		    return false;
 	}*/
 //---------------------------------------------------------------------------------

@@ -7,9 +7,9 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class SearchResultsPage extends AbstractPage {
 	
-	private static final By2 sandalsSearchTitle = new By2("'sandals search title'", By.xpath("//a[@data-label='Tan Smart Leather Corkbed Sandals (Younger)']"));
-	private static final By2 aviatorSunglassesTitle = new By2("'aviator sun glasses title'", By.xpath("//article[@id='i1']"));
-	private static final By2 addToFavouritesHeartButton = new By2("'add to favourites heart button'", By.xpath("//article[@id='i1']//a[@class='heart add plp desktop']"));
+	private static final By2 sandalsSearchTitle = new By2("'Sandals search result title'", By.xpath("//a[@data-label='Tan Smart Leather Corkbed Sandals (Younger)']"));
+	private static final By2 aviatorSunglassesTitle = new By2("'Search result Aviator Sun Glasses title'", By.xpath("//article[@id='i1']"));
+	private static final By2 addToFavouritesHeartButton = new By2("'add to Favourites Heart button on the product link'", By.xpath("//article[@id='i1']//a[@class='heart add plp desktop']"));
 	
 	
 	public SearchResultsPage(WebDriver driver) throws Exception {
