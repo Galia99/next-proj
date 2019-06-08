@@ -1,26 +1,24 @@
 package com.next.proj.nextG_proj.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.SearchResultsPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
+import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 
 public class SearchProductNegativeTest  extends AbstractTest{
 
 	@Test
 	public void _003_searchProductNegativeTest() throws Exception {
 
-		
 		String searchTerm = "Shoes";
 		String expectedWordInResultSunglasses ="Sunglasses";  
-		String email = "GalinaLtman@gmail.com";
-		String password = "galina@40";
 		
 		//Step 1 - Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 		
@@ -31,9 +29,9 @@ public class SearchProductNegativeTest  extends AbstractTest{
 		
 		//Step 3 - Enter Password, Email and click on "Sign In Now" button
 		report.startLevel("Step 3 - Enter Password, Email and click on \"Sign In Now\" button.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(password);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
 		//Step-4 write to search box & click on "Search Box" button
@@ -42,10 +40,10 @@ public class SearchProductNegativeTest  extends AbstractTest{
 		SearchResultsPage searchResultsPage = landingPage.clickOnseachItemsButton();
 		report.endLevel();
 		
-		//Step-6 ????????????
+		//Step-5 Confirm with message, that the request does not match the search result
 		report.startLevel("Step 5 - Confirm with message, that the request does not match the search result.");
-		String sandalsSearchTitle = searchResultsPage.getSandalsSearchTitle();  	
-		Assert.assertTrue(sandalsSearchTitle.contains(expectedWordInResultSunglasses), "The result found does not match the query! " + expectedWordInResultSunglasses + "'");
+		String sandalsSearchTitle = searchResultsPage.getSearchFirstResultTitle();  	
+		AssertUtils.assertTrue(sandalsSearchTitle.contains(expectedWordInResultSunglasses), "The result found does not match the query! " + expectedWordInResultSunglasses + "'");
 		report.endLevel();
 	}
 }

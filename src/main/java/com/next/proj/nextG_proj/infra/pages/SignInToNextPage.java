@@ -16,7 +16,6 @@ public class SignInToNextPage extends AbstractPage{
 			super(driver);
 		}
 		
-		
 		public void writeToemailField(String email) {
 			bot.writeToElement(emailField, email);
 		}
@@ -25,7 +24,11 @@ public class SignInToNextPage extends AbstractPage{
 			bot.writeToElement(PasswordField, password);
 		}
 		
-		public MyAccountPage clickTosignInNowButton() throws Exception {
+		public void clickTosignInNowButtonVoidFunction() {
+			bot.click(signInNowButton);
+		}
+		
+		public MyAccountPage clickTosignInNowButtonReturnMyAccountPage() throws Exception {
 			bot.click(signInNowButton);
 			return new MyAccountPage(driver);
 		}

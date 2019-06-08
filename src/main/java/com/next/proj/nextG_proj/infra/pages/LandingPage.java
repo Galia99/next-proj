@@ -18,9 +18,7 @@ public class LandingPage extends AbstractPage{
 	private static final By2 FavouriteIcon = new By2("'Favourite icon'",  By.xpath("//div[@class='favourite-icon intl']"));
 	private static final By2 markedFavouriteIcon = new By2("'marked Favourite icon'",  By.xpath("//div[@class='favourite-icon intl notification']"));
 	private static final By2 myAccountlinkActive = new By2("'My account link active'",  By.xpath("//a[@class='myAccountlinkactive']"));
-	private static final By2 myAccountSignOutButton = new By2("'Sign Out button in My Account page'",  By.xpath("//a[@class='myAccountsignout']"));
 	private static final By2 Mobile = new By2("'Mobile'",  By.xpath("//a[@title='Next Mobile']"));
-
 	
 	public LandingPage(WebDriver driver) throws Exception {
 		super(driver);
@@ -79,18 +77,19 @@ public class LandingPage extends AbstractPage{
 		bot.waitForElementToBeClickable(checkoutButton);
 	}
 
-	/*public String getFavouriteIcon() {
+	public String getFavouriteIcon() {
 		String FavouriteIconText = bot.getElementText(FavouriteIcon);
 		return FavouriteIconText;
-	}*/
+	}
 	
 	public FavouritePage clickOnFavouriteIcon() throws Exception { //try clicking on the empty favorites notification icon, if you get an exception, click on the icon with a notification
-
+		
 		try {
 			bot.click(FavouriteIcon);
 		}catch(Exception e) {
 			bot.click(markedFavouriteIcon);
 		}
+		
 		return new FavouritePage(driver);
 	}
 	
@@ -98,10 +97,22 @@ public class LandingPage extends AbstractPage{
 		bot.click(myAccountlinkActive);
 	}
 
-	public SignInToNextPage clickOnmyAccountSignOut() throws Exception {
-			bot.click(myAccountSignOutButton);
-			return new SignInToNextPage(driver);
+	
+	
+	public String getFavouriteIconClassText() {
+		
+		String iconClassText=null;
+		iconClassText = bot.getElementClass(FavouriteIcon);
+		return iconClassText;
 	}
+public String getFavouriteIconMarkedClassText() {
+		
+		String iconClassText=null;
+		iconClassText = bot.getElementClass(markedFavouriteIcon);
+		return iconClassText;
+	}
+	
+
 	
 private String generateRandomSearchTerm() {
 		

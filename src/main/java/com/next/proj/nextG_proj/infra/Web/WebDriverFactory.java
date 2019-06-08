@@ -22,15 +22,15 @@ public class WebDriverFactory {
 
 		switch(webDriverType) {
 		case CHROME:
-			System.setProperty("webdriver.chrome,driver", "src/main/resources/chromedriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
 			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
-			System.setProperty("webdriver.gecko,driver", "src/main/resources/geckodriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
+			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
 			driver = new FirefoxDriver();
 			break; 
 		case INTERNET_EXPLORER:
-			System.setProperty("webdriver.ie,driver", "src/main/resources/IEDriverServer.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
+			System.setProperty("webdriver.ie.driver", "src/main/resources/IEDriverServer.exe"); //System.setProperty("what we are looking for...", "where to looking for...");
 			driver = new InternetExplorerDriver();
 			break;
 		}

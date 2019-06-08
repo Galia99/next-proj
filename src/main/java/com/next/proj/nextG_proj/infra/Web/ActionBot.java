@@ -1,5 +1,6 @@
 package com.next.proj.nextG_proj.infra.Web;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,6 +75,18 @@ public class ActionBot {
 		report.log("Wait for element:  " + elementLocator + " to be clickable");
 		webDriverWait.until(ExpectedConditions.elementToBeClickable(elementLocator.by));
 	}
+	
+	public String getElementClass(By2 elementLocator) {
+		WebElement element = (new WebDriverWait(driver, 1000)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='//www.next.co.il/en/favourites']/div")));
+		report.log("Get class from element:  " + elementLocator);
+		element = driver.findElement(elementLocator.by);
+		return element.getAttribute("class");
+	}
+	
+	/*
+	 * public void waitAndRefresh() { driver.manage().timeouts().implicitlyWait(100,
+	 * TimeUnit.SECONDS); driver.navigate().refresh(); }
+	 */
 
 	/*public boolean isElementDisplayed(By elementLocator) {
 

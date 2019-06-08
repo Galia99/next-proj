@@ -1,25 +1,24 @@
 package com.next.proj.nextG_proj.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.MyAccountPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
 import com.next.proj.nextG_proj.infra.pages.UpdateSignInDetailsPage;
+import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 
 public class ChangePasswordTest  extends AbstractTest{
 
 	@Test
-	public void _05_ChangeAccountDetailsTest() throws Exception {
+	public void _010_ChangePasswordTest () throws Exception {
 
-		String email = "galinaltman@gmail.com";
-		String oldPassword = "galina@40";
-		String newPassword = "galina@41";
+		String newPassword = "galina@49";
 
 		//Step 1 - Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 		
@@ -30,9 +29,9 @@ public class ChangePasswordTest  extends AbstractTest{
 		
 		//Step 3 - Enter Password, Email and click on \"Sign In Now\" button, browse to My Account page.
 		report.startLevel("Step 3 - Enter Password, Email and click on \"Sign In Now\" button.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(oldPassword);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
 		//Step 4 - In SIGN IN DETAILS, click on \"EDIT\" button, browse to Update Sign In Details page
@@ -55,21 +54,23 @@ public class ChangePasswordTest  extends AbstractTest{
 		
 		//Step 7 - Enter old Password, Email, and click on "Sign In Now" button
 		report.startLevel("Step 7 - Enter old Password, Email, and click on \"Sign In Now\" button.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(oldPassword);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
 		//Step 8 - check "Password validation message" and confirm the correct message 
 		report.startLevel("Step 8 - Check \"Password validation message\" and confirm the correct message .");
-		String warningMessageTitel = signInToNextPage.getTextWarningMessageTitle();
-		Assert.assertEquals(warningMessageTitel, "Sorry, we have been unable to sign you in."); 
+		String actualWarningMessageTitle = signInToNextPage.getTextWarningMessageTitle();
+		String expectedWarningMessageTitle = "Sorry, we have been unable to sign you in.";
+		AssertUtils.assertEquals(actualWarningMessageTitle,expectedWarningMessageTitle ,"The actual message is not the same as the expected message"); 
 		report.endLevel();
 		
 		//Step 7 - reenter new password and click on "UPDATE" button
 		report.startLevel("Step 1 - Reenter new password and click on \"UPDATE\" button.");
+		
 		signInToNextPage.writeToPasswordField(newPassword);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 	}
 }

@@ -1,25 +1,24 @@
 package com.next.proj.nextG_proj.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.FavouritePage;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.SearchResultsPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
+import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 
 public class CheckFavoritesCounterTest extends AbstractTest{
 
 	@Test
-	public void _09_CheckFavoritesCounterTest() throws Exception {
+	public void _009_CheckFavoritesCounterTest() throws Exception {
 
 		String searchTerm ="Sunglasses Silver Aviator";
-		String email = "galinaltman@gmail.com";
-		String password = "galina@40";
 		
 		//Step-1 Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 		
@@ -30,9 +29,9 @@ public class CheckFavoritesCounterTest extends AbstractTest{
 		
 		//Step-3 enter Password, Email & click on "Sign In Now" button
 		report.startLevel("Step 3 - Enter Password, Email & click on \"Sign In Now\" button.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(password);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
 		//Step 4 - click on  "heart favorites" icon 
@@ -62,7 +61,7 @@ public class CheckFavoritesCounterTest extends AbstractTest{
 		int favoriteCountAfter = favouritePage.getTextCounterFavourites();
 		
 		try {
-			Assert.assertTrue(favoriteCountAfter > favoritesCountBefore);
+			AssertUtils.assertTrue(favoriteCountAfter > favoritesCountBefore,"Item has not been added to the bag");
 			System.out.println("success message");
 		}
 		catch(Exception e){

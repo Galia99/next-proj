@@ -2,6 +2,7 @@ package com.next.proj.nextG_proj.tests;
 
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.MyAccountPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
@@ -9,14 +10,11 @@ import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
 public class LoginTest extends AbstractTest{
 
 	@Test
-	public void _01_LoginTestToNext() throws Exception {
-
-		String email = "GalinaLtman@gmail.com";
-		String password = "galina@40";
+	public void _001_LoginTest() throws Exception {
 		
 		//Step 1 - Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 		
@@ -27,9 +25,10 @@ public class LoginTest extends AbstractTest{
 		
 		//Step 3 - Enter Password, Email and click on "Sign In Now" button
 		report.startLevel("Step 3 - Enter Password, Email and click on \"Sign In Now\" button, browse to My Account page.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(password);
-		MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButton();
+		//username(MainConfig.username);
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButtonReturnMyAccountPage();
 		report.endLevel();
 		
 		//Step 4 - click on sign in now button and check that we are on the "My Account" page

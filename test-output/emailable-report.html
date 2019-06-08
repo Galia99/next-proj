@@ -8,11 +8,38 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">35,940</td><td></td><td></td></tr>
+<tr><th colspan="7">Next Product Tests</th></tr>
+<tr><td><a href="#t0">Sanity</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">32,961</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.next.proj.nextG_proj.tests.AddItemToBagTest</td><td><a href="#m0">_06_addItemsToBagTest</a></td><td rowspan="1">1559570572082</td><td rowspan="1">25678</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Next Product Tests</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Sanity &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.next.proj.nextG_proj.tests.SearchProductNegativeTest</td><td><a href="#m0">_003_searchProductNegativeTest</a></td><td rowspan="1">1560006720388</td><td rowspan="1">6495</td></tr><tr><th colspan="4">Sanity &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.next.proj.nextG_proj.tests.SearchProductTest</td><td><a href="#m1">_004_searchProductsTest</a></td><td rowspan="1">1560006699513</td><td rowspan="1">20407</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.next.proj.nextG_proj.tests.AddItemToBagTest#_06_addItemsToBagTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Sanity</h2><h3 id="m0">com.next.proj.nextG_proj.tests.SearchProductNegativeTest#_003_searchProductNegativeTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;EmailOrAccountNumber&quot;}
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=72.0.3626.69 (3c16f8a135abc0d4da2dff33804db79b849a7c38),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ARTIUM-PC&apos;, ip: &apos;192.168.1.13&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_181&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 72.0.3626.69 (3c16f8a135abc..., userDataDir: C:\Users\Artium\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60269}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+Session ID: 41e9a97b43b278f8347e41e510d3c8a4
+*** Element info: {Using=id, value=EmailOrAccountNumber}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.next.proj.nextG_proj.infra.Web.ActionBot.writeToElement(ActionBot.java:63)
+	at com.next.proj.nextG_proj.infra.pages.SignInToNextPage.writeToemailField(SignInToNextPage.java:20)
+	at com.next.proj.nextG_proj.tests.SearchProductNegativeTest._003_searchProductNegativeTest(SearchProductNegativeTest.java:32)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.next.proj.nextG_proj.tests.SearchProductTest#_004_searchProductsTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

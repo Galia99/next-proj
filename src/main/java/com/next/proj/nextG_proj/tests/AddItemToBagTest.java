@@ -1,25 +1,23 @@
 package com.next.proj.nextG_proj.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.ProductPage;
 import com.next.proj.nextG_proj.infra.pages.SearchResultsPage;
 import com.next.proj.nextG_proj.infra.pages.ShoppingBagPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
+import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 
 public class AddItemToBagTest extends AbstractTest{
 
 	@Test
-	public void _06_addItemsToBagTest() throws Exception {
-
-		String email = "galinaltman@gmail.com";
-		String password = "galina@40";
+	public void _006_addItemsToBagTest() throws Exception {
 		
 		//Step 1 - Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 		
@@ -30,9 +28,9 @@ public class AddItemToBagTest extends AbstractTest{
 		
 		//Step-3 enter Password, Email & click on "Sign In Now" button
 		report.startLevel("Step 3 - Enter password, email and click on \"Sign In Now\" button.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(password);
-		signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
 		//Step-4  write a random search term in the top search bar and click the "search items" button
@@ -43,7 +41,7 @@ public class AddItemToBagTest extends AbstractTest{
 		
 		//Step-5 click the title of the first item in the list of search results
 		report.startLevel("Step 5 - Click on title of the first item in the list of search results, browse to Product page.");
-		ProductPage productPage = searchResultsPage.clickOnsilverAviatorStyleSunglasses();
+		ProductPage productPage = searchResultsPage.clickSearchFirstResultTitle();
 		report.endLevel();
 	
 	    //Step-6 Click "Add To Bag" button
@@ -58,7 +56,7 @@ public class AddItemToBagTest extends AbstractTest{
 	    
 	    //Step-8 Check the number of  items added to bag  
 		report.startLevel("Step 8 - Verify the number of items added to bag.");
-	    Assert.assertEquals(shoppingBagPage.getBagCounterConteiner(), 1, "Wrong number of items in bag!");
+		AssertUtils.assertEquals(shoppingBagPage.getBagCounterConteiner(), 1, "Number of items in bag should be 1");
 	    report.endLevel();
 	    
 	    //Step-9 remove items from bag with click to "remove this item" button
@@ -66,7 +64,6 @@ public class AddItemToBagTest extends AbstractTest{
 	    shoppingBagPage.clickOnRemoveThisItemButton();
 	    report.endLevel();
 	}
-	
 }		
 	
 

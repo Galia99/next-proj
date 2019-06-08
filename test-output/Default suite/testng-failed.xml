@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest">
+      <class name="com.next.proj.nextG_proj.tests.DataProviderExamples">
         <methods>
-          <include name="_02_ChangeAccountDetailsTest"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
+          <include name="searchFromMainLandingPage" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.DataProviderExamples -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

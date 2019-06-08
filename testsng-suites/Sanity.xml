@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+  
+<suite name="Next Product Tests" verbose="1" >
+  
+  <test name="Sanity">
+    <classes>
+      <class name="com.next.proj.nextG_proj.tests.SearchProductTest"/>
+      <class name="com.next.proj.nextG_proj.tests.SearchProductNegativeTest"/>
+    </classes>
+  </test>
+</suite>

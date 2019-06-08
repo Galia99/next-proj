@@ -2,6 +2,7 @@ package com.next.proj.nextG_proj.tests;
 
 import org.testng.annotations.Test;
 
+import com.next.proj.nextG_proj.infra.config.MainConfig;
 import com.next.proj.nextG_proj.infra.pages.LandingPage;
 import com.next.proj.nextG_proj.infra.pages.MyAccountPage;
 import com.next.proj.nextG_proj.infra.pages.SignInToNextPage;
@@ -10,14 +11,11 @@ import com.next.proj.nextG_proj.infra.pages.UpdateDeliveryAddressDetailsPage;
 public class ChangeAccountDetailsTest extends AbstractTest {
 
 	@Test
-	public void _02_ChangeAccountDetailsTest() throws Exception {
+	public void _002_ChangeAccountDetailsTest() throws Exception {
 
-		String email = "GalinaLtman@gmail.com";
-		String password = "galina@40";
-		
 		//Step 1 - Browse to next.co.il landing page
 		report.startLevel("Step 1 - Browse to next.co.il landing page.");
-		browseToUrl("https://www.next.co.il/en");
+		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		report.endLevel();
 
@@ -28,9 +26,9 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 
 		//Step 3 - Enter Password, Email and click on "Sign In Now" button
 		report.startLevel("Step 3 - Enter Password, Email and click on \"Sign In Now\" button, browse to My Account page.");
-		signInToNextPage.writeToemailField(email);
-		signInToNextPage.writeToPasswordField(password);
-		MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButton();
+		signInToNextPage.writeToemailField(MainConfig.username);
+		signInToNextPage.writeToPasswordField(MainConfig.password);
+		MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButtonReturnMyAccountPage();
 		report.endLevel();
 	
 		//Step-4 from My Accaunt page in BILLING ADDRESS window, click on "EDIT"  button
