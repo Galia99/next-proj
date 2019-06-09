@@ -13,12 +13,13 @@ import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 public class AddItemToBagTest extends AbstractTest{
 
 	@Test
-	public void _006_addItemsToBagTest() throws Exception {
+	public void _004_addItemsToBagTest() throws Exception {
 		
 		//Step 1 - Browse to next.co.il landing page
-		report.startLevel("Step 1 - Browse to next.co.il landing page.");
+		report.startLevel("Step 1 - Browse to next.co.il landing page, and go to english web site.");
 		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
+		landingPage.goToEnglishWebsite();
 		report.endLevel();
 		
 		//Step-2 click on "My Account Button"
@@ -45,7 +46,7 @@ public class AddItemToBagTest extends AbstractTest{
 		report.endLevel();
 	
 	    //Step-6 Click "Add To Bag" button
-		report.startLevel("Step 6 - Click on \"Add To Bag\" button.");
+		report.startLevel("Step 6 - Add item to bag with licking on \"Add To Bag\" button.");
 		productPage.clickOnaddToBagButton();
 		report.endLevel();
 		
@@ -55,15 +56,21 @@ public class AddItemToBagTest extends AbstractTest{
 	    report.endLevel();
 	    
 	    //Step-8 Check the number of  items added to bag  
-		report.startLevel("Step 8 - Verify the number of items added to bag.");
+		report.startLevel("Step 8 - Verify with AssertEquals function, number of items added to bag.");
 		AssertUtils.assertEquals(shoppingBagPage.getBagCounterConteiner(), 1, "Number of items in bag should be 1");
 	    report.endLevel();
 	    
 	    //Step-9 remove items from bag with click to "remove this item" button
-		report.startLevel("Step 9 - Remove items from \"ShoppingBagPage\" with click to \"remove this item\" button.");
+		report.startLevel("Step 9 - Remove items from Shopping Bag page, with click to \"remove this item\" button.");
 	    shoppingBagPage.clickOnRemoveThisItemButton();
 	    report.endLevel();
+	    
+	    report.startLevel("Step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		landingPage.clickOnmyAccountButton();
+		landingPage.clickOnmyAccountSignOut();
+		report.endLevel();
+	
 	}
 }		
-	
+
 

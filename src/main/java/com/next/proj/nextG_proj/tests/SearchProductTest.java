@@ -12,20 +12,17 @@ import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 public class SearchProductTest  extends AbstractTest{
 
 	@Test
-	public void _004_searchProductsTest() throws Exception {
+	public void _001_searchProductsTest() throws Exception {
 
 		String searchTerm ="Sunglasses Silver Aviator";
 		String expectedResultSunglasses ="Ray-Ban® Aviator Sunglasses";
 
 		//Step 1 - Browse to next.co.il landing page
-		report.startLevel("Step 1 - Browse to next.co.il landing page.");
+		report.startLevel("Step 1 - Browse to next.co.il landing page, and go to english web site.");
 		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.goToEnglishWebsite();
 		report.endLevel();
-		
-		//go to english website
-		//landingPage.goToEnglishWebsite();
 		
 		//Step 2 - click on "My Account Button"
 		report.startLevel("Step 2 - Click on \"My Account\" button, browse to Sign In To page.");
@@ -46,14 +43,20 @@ public class SearchProductTest  extends AbstractTest{
 		report.endLevel();
 		
 		//Step-5 click on search results item 
-		report.startLevel("Step 5 - Click on search results item, browse to Product page.");
+		report.startLevel("Step 5 - Click on search results button, browse to Product page.");
 		ProductPage productPage = searchResultsPage.clickSearchFirstResultTitle();
 		report.endLevel();
 		
 		//Step-6 Confirm with message, that the request is match the search result.
 		report.startLevel("Step 6 - Confirm with message, that the request is match the search result.");
 		String itemTitle = productPage.getProductTitle();
-		AssertUtils.assertTrue(itemTitle.contains(expectedResultSunglasses), "The result found does not match the query! " + expectedResultSunglasses + "'");
+		AssertUtils.assertTrue(itemTitle.contains(expectedResultSunglasses), "The result matches the query! " + expectedResultSunglasses + "'");
 		report.endLevel();
+		
+		report.startLevel("step 7 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		landingPage.clickOnmyAccountButton();
+		landingPage.clickOnmyAccountSignOut();
+		report.endLevel();
+   
 	}
 }

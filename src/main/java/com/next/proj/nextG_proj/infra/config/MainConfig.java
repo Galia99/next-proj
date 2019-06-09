@@ -34,8 +34,7 @@ public class MainConfig {
 		baseUrl = prop.getProperty("baseUrl");
 		username = prop.getProperty("username");
 		password = prop.getProperty("password");
-		//oldPassword = prop.getProperty("oldPassword");
-		//newPassword = prop.getProperty("newPassword");
+		newPassword = prop.getProperty("newPassword");
 		
 		//input.close();
 		/*		

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Next Product Tests]">
-  <test thread-count="5" name="Sanity(failed)">
+  <test thread-count="5" name="Product test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.tests.SearchProductNegativeTest">
+      <class name="com.next.proj.nextG_proj.tests.CheckFavoritesIconTest">
         <methods>
           <include name="afterTest"/>
-          <include name="_003_searchProductNegativeTest"/>
           <include name="beforeTest"/>
+          <include name="_008_CheckFavoritesIconTest"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.tests.SearchProductNegativeTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.CheckFavoritesIconTest -->
     </classes>
-  </test> <!-- Sanity(failed) -->
+  </test> <!-- Product test(failed) -->
 </suite> <!-- Failed suite [Next Product Tests] -->

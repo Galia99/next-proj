@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Next Searching Tests" verbose="1">
+
+<!-- Run all tests in a package -->
+
+	<test name="Search test">
+		<classes>
+			<class name="com.next.proj.nextG_proj.tests.SearchProductTest" />
+			<class name="com.next.proj.nextG_proj.tests.SearchProductNegativeTest" />
+			<class name="com.next.proj.nextG_proj.tests.DataProviderSearchingTest" />
+		</classes>
+	</test>
+</suite>

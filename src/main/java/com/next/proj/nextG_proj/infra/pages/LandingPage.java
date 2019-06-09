@@ -19,11 +19,18 @@ public class LandingPage extends AbstractPage{
 	private static final By2 markedFavouriteIcon = new By2("'marked Favourite icon'",  By.xpath("//div[@class='favourite-icon intl notification']"));
 	private static final By2 myAccountlinkActive = new By2("'My account link active'",  By.xpath("//a[@class='myAccountlinkactive']"));
 	private static final By2 Mobile = new By2("'Mobile'",  By.xpath("//a[@title='Next Mobile']"));
-	
+	private static final By2 helpButton = new By2("'Help button'",  By.xpath("//section[@class='QuickLinks']//a[@target='_blank']"));
+
+
 	public LandingPage(WebDriver driver) throws Exception {
 		super(driver);
 	}
 
+	public CustomerServicesPage clickOnHelpButton() throws Exception {
+		bot.click(helpButton);
+		return new CustomerServicesPage(driver);
+	}
+	
 	public void clickMobile() {
 		bot.click(Mobile);
 	}

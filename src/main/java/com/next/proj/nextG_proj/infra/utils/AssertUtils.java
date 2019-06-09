@@ -32,12 +32,31 @@ public class AssertUtils {
 	}
 	
 	public static void assertTrue(boolean condition, String message) {
-		assertTrue(condition, message, false);
+		assertTrue(condition, message, true);
 	}
 	public static void assertTrue(boolean condition, String message, boolean softAssert) {
 
 		try {
 			Assert.assertTrue(condition, message);
+			report.log(message + " - OK :)");
+		}
+		catch (AssertionError e) { 
+			
+			    //report the Exception and continue the test!
+				report.log(e.getMessage(), Status.failure);
+			 
+				if(!softAssert) {//if not a softAssert report the Exception (!softAssert)
+				throw e;
+			}
+		}
+	}
+	public static void assertFalse(boolean condition, String message) {
+		assertFalse(condition, message, true);
+	}
+	public static void assertFalse(boolean condition, String message, boolean softAssert) {
+
+		try {
+			Assert.assertFalse(condition, message);
 			report.log(message + " - OK :)");
 		}
 		catch (AssertionError e) { 

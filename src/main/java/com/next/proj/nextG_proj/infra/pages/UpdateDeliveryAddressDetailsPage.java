@@ -39,6 +39,9 @@ public class UpdateDeliveryAddressDetailsPage extends AbstractPage {
 	}
 	
 	public void selectRandomProvince() {
+		String currentProvince = bot.getElementText(stateOrProvincefield);
+		boolean flag = false;
+		
 		By2[] provinces = new By2[6];
 		provinces[0]=haifaProvince;
 		provinces[1]=haZafonProvince;
@@ -47,8 +50,16 @@ public class UpdateDeliveryAddressDetailsPage extends AbstractPage {
 		provinces[4]=telAvivProvince;
 		provinces[5]=yerushalaimProvince;
 		
-		int randomNum = ThreadLocalRandom.current().nextInt(0, 6);
-		bot.click(provinces[randomNum]);
+		while(!flag) {
+			int randomNum = ThreadLocalRandom.current().nextInt(0, 6);
+			System.out.println("the random choice is: "+provinces[randomNum]);
+			if(!provinces[randomNum].toString().equals(currentProvince)) {
+				bot.click(provinces[randomNum]);
+				flag=true;
+			}
+		}
+		
+		
 	}
 	
 	public void clickOnUpdateButton () throws Exception {

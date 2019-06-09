@@ -49,7 +49,7 @@ public class MyAccountPage extends AbstractPage{
 	}
 	
 	public String getbillingAddressInformation()  {
-		bot.getElementText(billingAddressInformation);
+		
 		return bot.getElementText(billingAddressInformation);
 	}
 }

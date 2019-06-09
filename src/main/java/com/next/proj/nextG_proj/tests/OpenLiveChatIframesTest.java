@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.next.proj.nextG_proj.infra.Web.TabAndIframeUtils;
 
 
-public class TabsIframesExampleTest extends AbstractTest {
+public class OpenLiveChatIframesTest extends AbstractTest {
 
 	@Test
 	public void iframeTest() {

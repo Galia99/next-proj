@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Next Account Tests]">
+  <test thread-count="5" name="Account test(failed)">
+    <classes>
+      <class name="com.next.proj.nextG_proj.tests.ChangePasswordTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="_010_ChangePasswordTest"/>
+        </methods>
+      </class> <!-- com.next.proj.nextG_proj.tests.ChangePasswordTest -->
+      <class name="com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest">
+        <methods>
+          <include name="_002_ChangeAccountDetailsTest"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest -->
+    </classes>
+  </test> <!-- Account test(failed) -->
+</suite> <!-- Failed suite [Next Account Tests] -->

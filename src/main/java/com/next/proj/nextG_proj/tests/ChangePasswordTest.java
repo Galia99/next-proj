@@ -12,17 +12,16 @@ import com.next.proj.nextG_proj.infra.utils.AssertUtils;
 public class ChangePasswordTest  extends AbstractTest{
 
 	@Test
-	public void _010_ChangePasswordTest () throws Exception {
-
-		String newPassword = "galina@49";
+	public void _011_ChangePasswordTest () throws Exception {
 
 		//Step 1 - Browse to next.co.il landing page
-		report.startLevel("Step 1 - Browse to next.co.il landing page.");
+		report.startLevel("Step 1 - Browse to next.co.il landing page, and go to english web site.");
 		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
+		landingPage.goToEnglishWebsite();
 		report.endLevel();
 		
-		//Step 2 - click on "My Account" Button from Landing Page
+		//Step 2 - Click on "My Account" Button from Landing Page
 		report.startLevel("Step 2 - Click on \"My Account\" button, browse to Sign In To page.");
 		SignInToNextPage signInToNextPage = landingPage.clickOnmyAccountButton();
 		report.endLevel();
@@ -40,9 +39,9 @@ public class ChangePasswordTest  extends AbstractTest{
 		UpdateSignInDetailsPage updateSignInDetailsPage = myAccountPage.clickOnEditSigninDetailsButton();
 		report.endLevel();
 		
-		//Step 5 - enter new password and click "UPDATE" button
+		//Step 5 - Enter new password and click "UPDATE" button
 		report.startLevel("Step 5 - Enter new password and click \"UPDATE\" button.");
-		updateSignInDetailsPage.writeToNewPasswordField(newPassword);
+		updateSignInDetailsPage.writeToNewPasswordField(MainConfig.newPassword);
 		updateSignInDetailsPage.clickToUpdateButton();
 		report.endLevel();
 		
@@ -66,11 +65,16 @@ public class ChangePasswordTest  extends AbstractTest{
 		AssertUtils.assertEquals(actualWarningMessageTitle,expectedWarningMessageTitle ,"The actual message is not the same as the expected message"); 
 		report.endLevel();
 		
-		//Step 7 - reenter new password and click on "UPDATE" button
-		report.startLevel("Step 1 - Reenter new password and click on \"UPDATE\" button.");
+		//Step 9 - Reenter new password and click on "UPDATE" button
+		report.startLevel("Step 9 - Reenter new password and click on \"UPDATE\" button.");
 		
-		signInToNextPage.writeToPasswordField(newPassword);
+		signInToNextPage.writeToPasswordField(MainConfig.newPassword);
 		signInToNextPage.clickTosignInNowButtonVoidFunction();
+		report.endLevel();
+		//Step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.
+		report.startLevel("step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		landingPage.clickOnmyAccountButton();
+		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();
 	}
 }
