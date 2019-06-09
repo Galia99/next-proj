@@ -9,7 +9,7 @@ public class NextWebChatPage extends AbstractPage {
 
 	
 	private static final By2 exitButton = new By2("'Close Live Chat button'", By.id("exitButton"));
-	private static final By2 time = new By2("'Close Live Chat button'", By.xpath("//div[@class='iwt-message-time sm-pull-right']"));
+	private static final By2 timeStamp = new By2("'Close Live Chat button'", By.xpath("//div[@class='iwt-message-time sm-pull-right']"));
 
 
 
@@ -19,5 +19,11 @@ public class NextWebChatPage extends AbstractPage {
 	
 	public void clickOnexitButton() {
 		bot.click(exitButton);
+	}
+	
+	public String getChatTimeText() {
+		String timeStampString = bot.getElementText(timeStamp);
+		return timeStampString;
+		
 	}
 }
