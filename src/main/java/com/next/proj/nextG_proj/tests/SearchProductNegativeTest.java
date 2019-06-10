@@ -16,14 +16,14 @@ public class SearchProductNegativeTest  extends AbstractTest{
 		String searchTerm = "Shoes";
 		String expectedWordInResultSunglasses ="Sunglasses";  
 		
-		//Step 1 - Browse to next.co.il landing page
+		//Step 1 - Browse to next.co.il landing page, and go to english web site
 		report.startLevel("Step 1 - Browse to next.co.il landing page, and go to english web site.");
 		browseToUrl(MainConfig.baseUrl);
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.goToEnglishWebsite();
 		report.endLevel();
 		
-	    //Step 2 - click on "My Account Button"
+	    //Step 2 - Click on "My Account" button, browse to Sign In To page
 		report.startLevel("Step 2 - Click on \"My Account\" button, browse to Sign In To page.");
 		SignInToNextPage signInToNextPage = landingPage.clickOnmyAccountButton();
 		report.endLevel();
@@ -35,7 +35,7 @@ public class SearchProductNegativeTest  extends AbstractTest{
 		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 	
-		//Step-4 write to search box & click on "Search Box" button
+		//Step-4 Wite to search box and click on \"Search Item\" button, browse to Search Results page
 		report.startLevel("Step 4 - Wite to search box and click on \"Search Item\" button, browse to Search Results page.");
 		landingPage.writeToSearchBox(searchTerm);
 		SearchResultsPage searchResultsPage = landingPage.clickOnseachItemsButton();

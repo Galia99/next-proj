@@ -10,9 +10,6 @@ public class FavouritePage extends AbstractPage {
 	private static final By2 counterFavourites = new By2("'counter favourites container'", By.id("favouriteItemsCountTarget"));
 	private static final By2 removeItemButton = new By2("'remove item from favourite page button'", By.xpath("//a[@class='remove-item-link']"));
 
-
-
-	//Constractor
 	public FavouritePage(WebDriver driver) throws Exception {
 		super(driver);
 	}

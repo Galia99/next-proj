@@ -34,7 +34,7 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 		MyAccountPage myAccountPage = signInToNextPage.clickTosignInNowButtonReturnMyAccountPage();
 		report.endLevel();
 	
-		//Step-4 from My Account page in BILLING ADDRESS window, click on "EDIT"  button
+		//Step 4 - From My Account page in BILLING ADDRESS window, click on "EDIT"  button, browse to Update Delivery Address Details page
 		report.startLevel("Step 4 - In BILLING ADDRESS click on \"EDIT\"  button, browse to Update Delivery Address Details page.");
 		String currentAddress = myAccountPage.getbillingAddressInformation();
 		UpdateDeliveryAddressDetailsPage updateDeliveryAddressDetailsPage = myAccountPage.clickOnEditBillingAddressButton();
@@ -43,11 +43,11 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 		//Step 5 - Click to State Or Province field, select Province with random and click on \"Update\" button
 		report.startLevel("Step 5 - Click to State Or Province field, select Province with random and click on \"Update\" button.");
 		updateDeliveryAddressDetailsPage.clickToStateOrProvincefield();
-		updateDeliveryAddressDetailsPage.selectRandomProvince(); //IZMENIT" VYBO, NA POOCHEREDNYI
-		updateDeliveryAddressDetailsPage.clickOnUpdateButton(); //PERVYI CLIK OTMECHAET IZMENENIYA
+		updateDeliveryAddressDetailsPage.selectRandomProvince(); 
+		updateDeliveryAddressDetailsPage.clickOnUpdateButton();
 		report.endLevel();
 		
-		//Step-6 Get address information from myAccount page
+		//Step 6 - Get address information from myAccount page
 		report.startLevel("Step 6 - Get address information from My Account page.");
 		String newAddress = null;
 		try {
@@ -58,6 +58,7 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 			System.out.println("Step 6 failed");
 		}
 		report.endLevel();
+		
 		//Step 7 - Assert that the old address and the new address are not equal
 		report.startLevel("Step 7 - Assert that the old address and the new address are not equal.");
 		AssertUtils.assertFalse(currentAddress.contains(newAddress), "The result found does not match the query!");

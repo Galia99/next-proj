@@ -67,7 +67,7 @@ public class UpdateDeliveryAddressDetailsPage extends AbstractPage {
 			bot.click(updateButton);
 		} catch (Exception e) {
 			new Actions(driver).sendKeys(Keys.PAGE_DOWN).perform();
-			bot.click(updateButton);//1 CLIK OTMECHAET IZMENENIYA
+			bot.click(updateButton);
 		}
 	}
 }

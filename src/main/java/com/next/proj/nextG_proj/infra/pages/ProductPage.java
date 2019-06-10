@@ -19,25 +19,16 @@ public class ProductPage extends AbstractPage{
 	}
 	public void clickOnaddToBagButton () {
 		bot.click(addToBagButton);
-		//driver.findElement(addToBagButton).click();
+		
 	}
 
 	public String getProductTitle () {
 		return bot.getElementText(productTitle);
 	}
-	/*
-	 * public NextShoppingBagPage clickOnviewEditBagButton () throws Exception {
-	 * driver.findElement(viewEditBagButton).click();
-	 * 
-	 * if (viewEditBagButtonVisible()) { clickOnviewEditBagButton(); }
-	 * 
-	 * return new NextShoppingBagPage(driver); }
-	 */
 	 
 	 public ShoppingBagPage clickOnviewEditBagButton () throws Exception {
 			
 			if (viewEditBagButtonVisible()) {
-				//write here that this page exists
 				System.out.println("The bag of items is shown");
 				bot.click(viewEditBagButton);
 			}
@@ -53,37 +44,4 @@ public class ProductPage extends AbstractPage{
 		}
 		return false;
 	}
-	
-	/*public boolean isviewEditBagButtonVisible () {
-	
-	try {
-		WebElement xButton = driver.findElement(viewEditBagButton);//if xButton exists and displayet
-		driver.findElement(viewEditBagButton).click();
-		return xButton.isDisplayed();
-	}
-	catch (NoSuchElementException e) { //if xButton exists but is not displayet
-		return false;
-	}
-}/*
-	//-------------------------------------(Or)--------------------------------
-	/*public boolean isviewEditBagButtonVisible () {// kak pojmat' ne postoyannyj popap
-
-		List<WebElement> elements = driver.findElements(viewEditBagButton);
-		if (elements.size() > 0) {
-			return elements.get(0).isDisplayed();
-		}
-		return false;
-		*/
-	
-		//-----------------------------(Or)----------------------------------------------
-	
-		/*try {
-			WebElement xButton = driver.findElement(viewEditBagButton);//if xButton exists and displayet
-			return xButton.isDisplayed();
-			
-		}
-		catch (NoSuchElementException e) { //if xButton exists but is not displayet
-			return false;
-		}
-	}*/
 }

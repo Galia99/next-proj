@@ -28,8 +28,8 @@ public class CheckFavoritesCounterTest extends AbstractTest{
 		SignInToNextPage signInToNextPage = landingPage.clickOnmyAccountButton();
 		report.endLevel();
 		
-		//Step-3 enter Password, Email & click on "Sign In Now" button
-		report.startLevel("Step 3 - Enter Password, Email & click on \"Sign In Now\" button.");
+		//Step-3 Enter Password, Email and click on "Sign In Now" button
+		report.startLevel("Step 3 - Enter Password, Email and click on \"Sign In Now\" button.");
 		signInToNextPage.writeToemailField(MainConfig.username);
 		signInToNextPage.writeToPasswordField(MainConfig.password);
 		signInToNextPage.clickTosignInNowButtonVoidFunction();
@@ -40,8 +40,8 @@ public class CheckFavoritesCounterTest extends AbstractTest{
 		FavouritePage favouritePage = landingPage.clickOnFavouriteIcon();
 		report.endLevel();
 		
-		//Step 5 - Get favorites Counter Before.
-		report.startLevel("Step 5 - Get favorites Counter Before.");
+		//Step 5 - Check counter, before adding favorite items.
+		report.startLevel("Step 5 - Check counter, before adding favorite items.");
 		int favoritesCountBefore = favouritePage.getTextCounterFavourites();
 		report.endLevel();
 		

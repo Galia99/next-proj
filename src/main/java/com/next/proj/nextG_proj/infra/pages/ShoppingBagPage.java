@@ -18,7 +18,6 @@ public class ShoppingBagPage extends AbstractPage{
 	public int getBagCounterConteiner() {
 		
 		String bagCounterText = bot.getElementText(bagCounterSpan);
-		//String bagCounterText = driver.findElement(bagCounterSpan).getText();
 		int bagCounter = Integer.parseInt(bagCounterText);
 		return bagCounter;
 	} 

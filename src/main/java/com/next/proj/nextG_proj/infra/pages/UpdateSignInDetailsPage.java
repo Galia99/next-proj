@@ -12,7 +12,6 @@ public class UpdateSignInDetailsPage extends AbstractPage{
 	private static final By2 passwordValidationMessageTitle = new By2("'Password validation message, when entering invalid password in Sign In Details page'", By.id("Password-validation-message"));
 	private static final By2 updateSignInDetailsTitle = new By2("'update sign in details title'", By.xpath("//label[text()='Update Sign In Details']"));
 
-	
 	public UpdateSignInDetailsPage(WebDriver driver) throws Exception {
 		super(driver, updateSignInDetailsTitle);
 
@@ -31,20 +30,4 @@ public class UpdateSignInDetailsPage extends AbstractPage{
 		bot.getElementText(passwordValidationMessageTitle);
 		return bot.getElementText(passwordValidationMessageTitle);
 	}
-	
-	/*public String getaddressValidationWarningMessageTitle() {
-		bot.getElementText(addressValidationWarningMessageTitle);
-		return driver.findElement(addressValidationWarningMessageTitle).getText();
-	}
-	
-	public void clickOnCancelButton () throws Exception {
-		
-		try {
-			bot.click(cancelButton);
-		} catch (Exception e) {
-		    new Actions(driver).sendKeys(Keys.PAGE_DOWN).perform();
-		    bot.click(cancelButton);
-		}
-	
-	}*/
 }

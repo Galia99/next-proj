@@ -22,12 +22,9 @@ public abstract class AbstractTest {
 	protected static ReportDispatcher report = ReportManager.getInstance();
 	protected static WebDriver driver;
 	
-	
-
 	@BeforeMethod
 	public void beforeTest() throws IOException   {
 
-		//Add path from MainConfig Class
 		MainConfig.initFromFile("src/main/resources/config/MainConfig.properties");
 		 
 		if (driver == null) {
@@ -44,12 +41,10 @@ public abstract class AbstractTest {
 		
         	if(driver != null) {
 			java.io.File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			report.addImage(screenshotFile, description);
-			
+			report.addImage(screenshotFile, description);	
 		}
 		else {
 			report.log("driver == null; Can't take screnshot. ", Status.warning);
-			//Reports.warning("driver == null; Can't take screnshot.");
 		}
 	}
 

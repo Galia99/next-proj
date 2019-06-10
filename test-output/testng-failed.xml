@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.next.proj.nextG_proj.tests.FakeTest">
+      <class name="com.next.proj.nextG_proj.tests.DateLiveChatTest">
         <methods>
+          <include name="_009_dateLiveChatTest"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="_009_timeLiveChatTest"/>
         </methods>
-      </class> <!-- com.next.proj.nextG_proj.tests.FakeTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.DateLiveChatTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
