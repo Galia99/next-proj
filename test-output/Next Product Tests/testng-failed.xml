@@ -3,11 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Next Product Tests]">
   <test thread-count="5" name="Product test(failed)">
     <classes>
+      <class name="com.next.proj.nextG_proj.tests.CheckFavoritesCounterTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="_005_CheckFavoritesCounterTest"/>
+        </methods>
+      </class> <!-- com.next.proj.nextG_proj.tests.CheckFavoritesCounterTest -->
       <class name="com.next.proj.nextG_proj.tests.CheckFavoritesIconTest">
         <methods>
           <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="_008_CheckFavoritesIconTest"/>
+          <include name="_006_CheckFavoritesIconTest"/>
         </methods>
       </class> <!-- com.next.proj.nextG_proj.tests.CheckFavoritesIconTest -->
     </classes>

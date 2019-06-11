@@ -1,6 +1,8 @@
 package com.next.proj.nextG_proj.infra.config;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -17,17 +19,17 @@ public class MainConfig {
 	public static String oldPassword;
 	public static String newPassword;
 	
-	//Enter to @BeforeMethod function, in AbstractTest.
+	
 	public static void initFromFile(String filePath) throws IOException {
 
 		
 		Properties prop = new Properties();
 		InputStream input = new FileInputStream(filePath);
 
-		//Load a properties file 
+		
 		prop.load(input);
 		
-		//Convert 4 WebDriverType(webDriverType String object) to CHROME.
+	
 		webDriverType = WebDriverType.valueOf(prop.getProperty("webDriverType"));
 		closeBrowserTestEnd = Boolean.parseBoolean(prop.getProperty("closeBrowserTestEnd"));
 		webDriverImplicitWaitInSeconds = Integer.parseInt(prop.getProperty("webDriverImplicitWaitInSeconds"));
@@ -36,24 +38,33 @@ public class MainConfig {
 		password = prop.getProperty("password");
 		newPassword = prop.getProperty("newPassword");
 		
-		//input.close();
-		/*		
-		//Convert 1 WebDriverType(webDriverType String object) to CHROME.
-	    // get the property key(webDriverTypeString) and print it out
-		String webDriverTypeString = prop.getProperty("webDriverType");
-		//Convert 2 WebDriverType(webDriverType String object) to CHROME.
-		WebDriverType driverType = WebDriverType.valueOf("CHROME");
-		//Convert 3 WebDriverType(webDriverType String object) to CHROME.
-		WebDriverType driverType = WebDriverType.valueOf(prop.getProperty("webDriverType"));
-		 */
+		input.close();
 	}
-/*	public static void main (String[] args) throws IOException {
-		initFromFile("src//main//resources//config//MainConfig.properties");
+	
+	public static String setUpdatedPassword(String filePath, String updatePassword) throws IOException {
+		FileInputStream in = new FileInputStream(filePath);
+		Properties prop = new Properties();
+		prop.load(in);
+		in.close();
+		FileOutputStream out = new FileOutputStream(filePath); 
 		
-		System.out.println(webDriverType);
-		System.out.println(closeBrowserTestEnd);
-		System.out.println(webDriverImplicitWaitInSeconds);
-		System.out.println(baseUrl);
-
-	}*/
+		
+		String[] str = updatePassword.split("@");
+		String passNum = str[1];
+		int passNumInt = Integer.parseInt(passNum);
+		int newPassNum = passNumInt+1;
+		String newPassNumString = Integer.toString(newPassNum); 
+		String newUpdatedPassword = "galina@"+newPassNumString;
+		
+		
+		prop.setProperty("password", updatePassword);
+		prop.setProperty("newPassword", newUpdatedPassword);
+		
+		prop.store(out, null);
+		out.close();
+		
+		return newUpdatedPassword;
+	}
+	
+	
 }

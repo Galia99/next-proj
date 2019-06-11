@@ -46,7 +46,7 @@ public class AddItemToBagTest extends AbstractTest{
 		report.endLevel();
 	
 	    //Step 6 - Click "Add To Bag" button
-		report.startLevel("Step 6 - Add item to bag with licking on \"Add To Bag\" button.");
+		report.startLevel("Step 6 - Add item to bag by clicking on \"Add To Bag\" button.");
 		productPage.clickOnaddToBagButton();
 		report.endLevel();
 		
@@ -65,8 +65,8 @@ public class AddItemToBagTest extends AbstractTest{
 	    shoppingBagPage.clickOnRemoveThisItemButton();
 	    report.endLevel();
 	    
-	    //Step 10 - Log Out from Next, lick on "My Account" button, click on sign out button
-	    report.startLevel("Step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+	    //Step 10 - Log Out from Next, click on "My Account" button, click on sign out button
+	    report.startLevel("Step 10 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

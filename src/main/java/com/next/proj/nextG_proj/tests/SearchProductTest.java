@@ -47,14 +47,14 @@ public class SearchProductTest  extends AbstractTest{
 		ProductPage productPage = searchResultsPage.clickSearchFirstResultTitle();
 		report.endLevel();
 		
-		//Step 6 - Confirm with message, that the request is match the search result
-		report.startLevel("Step 6 - Confirm with message, that the request is match the search result.");
+		//Step 6 - Confirm with message, that the request matches the search result
+		report.startLevel("Step 6 - Confirm with message, that the request matches the search result.");
 		String itemTitle = productPage.getProductTitle();
 		AssertUtils.assertTrue(itemTitle.contains(expectedResultSunglasses), "The result matches the query! " + expectedResultSunglasses + "'");
 		report.endLevel();
 		
-		//Step 7 - Log Out from Next, lick on \"My Account\" button, after click on sign out button
-		report.startLevel("step 7 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//Step 7 - Log Out from Next, click on \"My Account\" button, then click on sign out button
+		report.startLevel("step 7 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

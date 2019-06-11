@@ -45,8 +45,8 @@ public class ChangePasswordTest  extends AbstractTest{
 		updateSignInDetailsPage.clickToUpdateButton();
 		report.endLevel();
 		
-		//Step 6 - click to "My Account link active" button, then click on "My Account SignOut" button
-		report.startLevel("Step 6 - Click to \"My Account link active\" button, then click on \"My Account SignOut\" button.");
+		//Step 6 - click on "My Account link active" button, then click on "My Account SignOut" button
+		report.startLevel("Step 6 - Click on \"My Account link active\" button, then click on \"My Account SignOut\" button.");
 		landingPage.clickOnMyAccountlinkActive();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();
@@ -68,11 +68,12 @@ public class ChangePasswordTest  extends AbstractTest{
 		//Step 9 - Reenter new password and click on "Sign In Now " button
 		report.startLevel("Step 9 - Reenter new password and click on \"Sign In Now \" button.");	
 		signInToNextPage.writeToPasswordField(MainConfig.newPassword);
+		setPasswordAfterChange(MainConfig.newPassword);
 		signInToNextPage.clickTosignInNowButtonVoidFunction();
 		report.endLevel();
 		
-		//Step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.
-		report.startLevel("step 10 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//Step 10 - Log Out from Next, click on \"My Account\" button, then click on sign out button.
+		report.startLevel("step 10 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

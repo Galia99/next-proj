@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19877" started-at="2019-06-10T21:35:08Z" finished-at="2019-06-10T21:35:28Z">
+  <suite name="Next Account Tests" duration-ms="69444" started-at="2019-06-11T16:51:47Z" finished-at="2019-06-11T16:52:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19877" started-at="2019-06-10T21:35:08Z" finished-at="2019-06-10T21:35:28Z">
-      <class name="com.next.proj.nextG_proj.tests.DateLiveChatTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.next.proj.nextG_proj.tests.DateLiveChatTest@782663d3]" name="beforeTest" is-config="true" duration-ms="4719" started-at="2019-06-10T21:35:08Z" finished-at="2019-06-10T21:35:13Z">
+    <test name="Account test" duration-ms="69444" started-at="2019-06-11T16:51:47Z" finished-at="2019-06-11T16:52:57Z">
+      <class name="com.next.proj.nextG_proj.tests.ChangePasswordTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangePasswordTest@3578436e]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-06-11T16:52:31Z" finished-at="2019-06-11T16:52:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="_009_dateLiveChatTest()[pri:0, instance:com.next.proj.nextG_proj.tests.DateLiveChatTest@782663d3]" name="_009_dateLiveChatTest" duration-ms="14264" started-at="2019-06-10T21:35:13Z" finished-at="2019-06-10T21:35:27Z">
+        <test-method status="PASS" signature="_010_ChangePasswordTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangePasswordTest@3578436e]" name="_010_ChangePasswordTest" duration-ms="25406" started-at="2019-06-11T16:52:31Z" finished-at="2019-06-11T16:52:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _009_dateLiveChatTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.next.proj.nextG_proj.tests.DateLiveChatTest@782663d3]" name="afterTest" is-config="true" duration-ms="827" started-at="2019-06-10T21:35:27Z" finished-at="2019-06-10T21:35:28Z">
+        </test-method> <!-- _010_ChangePasswordTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangePasswordTest@3578436e]" name="afterTest" is-config="true" duration-ms="380" started-at="2019-06-11T16:52:56Z" finished-at="2019-06-11T16:52:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.next.proj.nextG_proj.tests.DateLiveChatTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.next.proj.nextG_proj.tests.ChangePasswordTest -->
+      <class name="com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest@2eda0940]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-06-11T16:52:11Z" finished-at="2019-06-11T16:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="_008_ChangeAccountDetailsTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest@2eda0940]" name="_008_ChangeAccountDetailsTest" duration-ms="19231" started-at="2019-06-11T16:52:11Z" finished-at="2019-06-11T16:52:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _008_ChangeAccountDetailsTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest@2eda0940]" name="afterTest" is-config="true" duration-ms="413" started-at="2019-06-11T16:52:30Z" finished-at="2019-06-11T16:52:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.ChangeAccountDetailsTest -->
+      <class name="com.next.proj.nextG_proj.tests.LoginTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.next.proj.nextG_proj.tests.LoginTest@eb21112]" name="beforeTest" is-config="true" duration-ms="4708" started-at="2019-06-11T16:51:47Z" finished-at="2019-06-11T16:51:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="_007_LoginTest()[pri:0, instance:com.next.proj.nextG_proj.tests.LoginTest@eb21112]" name="_007_LoginTest" duration-ms="18769" started-at="2019-06-11T16:51:52Z" finished-at="2019-06-11T16:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _007_LoginTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.next.proj.nextG_proj.tests.LoginTest@eb21112]" name="afterTest" is-config="true" duration-ms="401" started-at="2019-06-11T16:52:11Z" finished-at="2019-06-11T16:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.next.proj.nextG_proj.tests.LoginTest -->
+    </test> <!-- Account test -->
+  </suite> <!-- Next Account Tests -->
 </testng-results>

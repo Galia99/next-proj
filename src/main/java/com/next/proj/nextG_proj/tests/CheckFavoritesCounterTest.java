@@ -72,8 +72,8 @@ public class CheckFavoritesCounterTest extends AbstractTest{
 		favouritePage.clickOnRemoveItemButton();
 		report.endLevel();
 		
-		//Step 9 - Log Out from Next, lick on "My Account" button, after click on sign out button.
-		report.startLevel("step 9 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//Step 9 - Log Out from Next, click on "My Account" button, then click on sign out button.
+		report.startLevel("step 9 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

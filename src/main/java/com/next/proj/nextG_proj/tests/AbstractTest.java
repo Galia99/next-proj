@@ -47,6 +47,12 @@ public abstract class AbstractTest {
 			report.log("driver == null; Can't take screnshot. ", Status.warning);
 		}
 	}
+	
+	public void setPasswordAfterChange(String updatePassword) throws IOException {
+		report.log("Set new password: " + updatePassword);
+		String newUpdatedPassword = MainConfig.setUpdatedPassword("src/main/resources/config/MainConfig.properties",updatePassword);
+		report.log("Set new future password: " + newUpdatedPassword);
+	}
 
 	@AfterMethod
 	public void afterTest() throws Exception {

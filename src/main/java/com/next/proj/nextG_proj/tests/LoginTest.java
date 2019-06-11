@@ -36,8 +36,8 @@ public class LoginTest extends AbstractTest{
 		myAccountPage.gethiMrsGalinaKhononovTitle();
 		report.endLevel();
 		
-		//Step 5 - Log Out from Next, lick on \"My Account\" button, after click on sign out button
-		report.startLevel("step 5 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//Step 5 - Log Out from Next, click on \"My Account\" button, then click on sign out button
+		report.startLevel("step 5 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

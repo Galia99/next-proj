@@ -40,8 +40,8 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 		UpdateDeliveryAddressDetailsPage updateDeliveryAddressDetailsPage = myAccountPage.clickOnEditBillingAddressButton();
 		report.endLevel(); 
 		
-		//Step 5 - Click to State Or Province field, select Province with random and click on \"Update\" button
-		report.startLevel("Step 5 - Click to State Or Province field, select Province with random and click on \"Update\" button.");
+		//Step 5 - Click to State Or Province field, select a random Province and click on \"Update\" button
+		report.startLevel("Step 5 - Click to State Or Province field, select a random Province and click on \"Update\" button.");
 		updateDeliveryAddressDetailsPage.clickToStateOrProvincefield();
 		updateDeliveryAddressDetailsPage.selectRandomProvince(); 
 		updateDeliveryAddressDetailsPage.clickOnUpdateButton();
@@ -64,8 +64,8 @@ public class ChangeAccountDetailsTest extends AbstractTest {
 		AssertUtils.assertFalse(currentAddress.contains(newAddress), "The result found does not match the query!");
 		report.endLevel();
 		
-		//step 8 - Log Out from Next, lick on "My Account" button, after click on sign out button
-		report.startLevel("Step 8 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//step 8 - Log Out from Next, click on "My Account" button, then click on sign out button
+		report.startLevel("Step 8 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

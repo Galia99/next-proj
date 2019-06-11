@@ -41,14 +41,14 @@ public class SearchProductNegativeTest  extends AbstractTest{
 		SearchResultsPage searchResultsPage = landingPage.clickOnseachItemsButton();
 		report.endLevel();
 		
-		//Step-5 Confirm with message, that the request does not match the search result
-		report.startLevel("Step 5 - Confirm with message, that the request does not match the search result.");
+		//Step-5 Assert false:Confirm with message, that the request does not match the search result
+		report.startLevel("Step 5 - Assert false:Confirm with message, that the request does not match the search result.");
 		String sandalsSearchTitle = searchResultsPage.getSearchFirstResultTitle();  	
 		AssertUtils.assertFalse(sandalsSearchTitle.contains(expectedWordInResultSunglasses), "The result found does not match the query! " + expectedWordInResultSunglasses + "'");
 		report.endLevel();
 		
-		//Step- 6 Log Out from Next, lick on \"My Account\" button, after click on sign out button
-		report.startLevel("Step 6 - Log Out from Next, lick on \"My Account\" button, after click on sign out button.");
+		//Step- 6 Log Out from Next, click on \"My Account\" button, then click on sign out button
+		report.startLevel("Step 6 - Log Out from Next, click on \"My Account\" button, then click on sign out button.");
 		landingPage.clickOnmyAccountButton();
 		landingPage.clickOnmyAccountSignOut();
 		report.endLevel();

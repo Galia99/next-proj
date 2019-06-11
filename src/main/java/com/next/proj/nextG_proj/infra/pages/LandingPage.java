@@ -9,7 +9,7 @@ import com.next.proj.nextG_proj.infra.Web.By2;
 
 public class LandingPage extends AbstractPage{
 
-	// class-By, metoda statit-id, mahzira ob'ect mi tipus-By.
+
 	private static final By2 searchbox = new By2("'Main search box'", By.xpath("//input[@class='SearchBox']"));
 	private static final By2 searchProductsButton = new By2("'(Magnifier) button for search products'", By.xpath("//input[@class='SearchButton']"));
 	private static final By2 shoppingBagButton = new By2("'Shopping bag Icon'",  By.xpath("//div[@class='Icon active']"));
